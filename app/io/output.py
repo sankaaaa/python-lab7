@@ -26,6 +26,8 @@ def write_file(path_to_file, text):
     if isinstance(text, pd.DataFrame):
         text = text.to_string(index=False)
 
-    with open(path_to_file, 'w') as file:
-        file.write(text)
+    file = open(path_to_file, 'w')
+    file.write(text)
+    file.close()
+    return text
 
