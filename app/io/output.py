@@ -20,7 +20,7 @@ def write_file(path_to_file, text):
     :param text:
         DataFrame or str: Text or DataFrame to be written to the file
     :return:
-        None
+        Text written in file
     """
     import pandas as pd
     if isinstance(text, pd.DataFrame):
@@ -31,3 +31,17 @@ def write_file(path_to_file, text):
     file.close()
     return text
 
+
+def write_file_pand(path_to_file, text):
+    """
+    Function to write the text to the file using pandas
+
+    :param path_to_file:
+        str: Path to the file to write the text in
+    :param text:
+        DataFrame: DataFrame to be written to the flie
+    :return:
+        Text written in file
+    """
+    import pandas as pd
+    text.to_csv(path_to_file, index=False)
